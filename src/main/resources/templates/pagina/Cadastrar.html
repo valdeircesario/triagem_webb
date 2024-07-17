@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #0056b3, #0bf1ac, #fff);
+            background-size: cover; /* Cobrir toda a página */
+            background-repeat: no-repeat;
+            height: 100vh;
+
+        }
+
+        /* Estilos do header */
+        header {
+            background-color: #71acec; /* Cor de fundo azul */
+            color: #fff; /* Cor do texto branco */
+            padding: 20px 20px; /* Espaçamento interno */
+            display: flex; /* Para alinhar itens horizontalmente */
+            justify-content: space-between; /* Alinha os itens às extremidades */
+            align-items: center; /* Centraliza verticalmente */
+            border-bottom: 3px solid #eccbcb;
+            margin-bottom: 20px;
+            z-index: 1000;
+
+        }
+
+        header h1 {
+            margin: 0; /* Remove margem padrão */
+        }
+
+        nav a {
+            color: white; /* Cor do texto branco */
+            /* Remove sublinhado */
+            margin-left: 30px; /* Espaçamento entre os links */
+            font-size: 1.2rem;
+        }
+
+        nav a:hover {
+            text-decoration: underline; /* Sublinhado ao passar o mouse */
+            color: red;
+        }
+
+
+
+        /*login*/
+
+
+
+
+        .login-container {
+
+            display: flex;
+            justify-content: center; /* Centraliza horizontalmente */
+            align-items: center; /* Centraliza verticalmente */
+            background-color: #fff;
+            border-radius: 8px;
+            padding: 20px; /* Adiciona um espaçamento interno */
+            box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.1); /* Sombra */
+            max-width: 500px; /* Largura máxima do container */
+            margin: 0 auto; /* Margem automática nas laterais para centralizar */
+            margin-top: 120px;
+
+        }
+
+
+        .login-form {
+            display: flex;
+            flex-direction: column;
+            width: 80%;
+        }
+
+        .login-form h2 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        label {
+            font-weight: bold;
+        }
+
+        input[type="email"],
+        input[type="password"] {
+            padding: 9px;
+            width: 100%;
+            border: 2px solid #ccc;
+            border-radius: 4px;
+        }
+
+        button {
+            padding: 10px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+
+        a {
+            text-decoration: none;
+            color: #007bff;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+        .instrucoes {
+            font-size: 14px;
+            color: #999;
+            margin-top: 5px;
+        }
+
+        #senha-instrucoes {
+            display: block;
+        }
+
+        #senha-igual-span {
+            display: block;
+            color: red;
+        }
+
+
+    </style>
+
+
+    <title>Formulário de Login</title>
+</head>
+<body>
+<header>
+    <h1>Saúde</h1>
+    <nav>
+        <a href="#">Página Inicial</a>
+        <a href="/templates/pagina/Login.html">Login</a>
+    </nav>
+</header>
+
+<div class="login-container">
+    <form action="#" method="POST" class="login-form" id="formulario">
+        <h2>Cadastrar</h2>
+        <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" required placeholder="Digite aqui seu email">
+        </div>
+        <div class="form-group">
+            <label for="senha">Senha:</label>
+            <input type="password" id="senha" name="senha" required>
+            <span id="senha-instrucoes" class="instrucoes">
+                Senha com pelo menos 8 caracteres, incluindo números e letras maiúsculas e minúsculas.
+            </span>
+        </div>
+        <div class="form-group">
+            <label for="senha2">Confirmar Senha:</label>
+            <input type="password" id="senha2" name="senha2" required placeholder="Confirme a Senha">
+            <span id="senha-igual-span" class="instrucoes" style="display: none; color: red;"></span>
+        </div>
+        <div class="form-group">
+            <button type="submit">Enviar</button>
+        </div>
+        <div class="form-group">
+            <a href="#">Esqueci a senha a definir</a>
+            <a href="/templates/pagina/Login.html">Fazer Login</a>
+
+        </div>
+    </form>
+</div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        var senhaInput = document.getElementById('senha');
+        var senhaInstrucoes = document.getElementById('senha-instrucoes');
+        var senha2Input = document.getElementById('senha2');
+        var senhaIgualSpan = document.getElementById('senha-igual-span');
+        var formulario = document.getElementById('formulario');
+        var submitButton = document.querySelector('button[type="submit"]');
+
+        senhaInput.addEventListener('input', function() {
+            senhaInstrucoes.style.display = 'block';
+            checkPasswordsMatch();
+        });
+
+        senha2Input.addEventListener('input', function() {
+            checkPasswordsMatch();
+        });
+
+        formulario.addEventListener('submit', function(event) {
+            event.preventDefault(); // Impede o envio do formulário
+            console.log('Email:', document.getElementById('email').value);
+            console.log('Senha:', senhaInput.value);
+            console.log('Confirmar Senha:', senha2Input.value);
+            alert('Formulário enviado com sucesso!');
+        });
+
+        function checkPasswordsMatch() {
+            var senhaValue = senhaInput.value;
+            var senha2Value = senha2Input.value;
+
+            if (senha2Value !== "") {
+                if (senhaValue === senha2Value) {
+                    senhaIgualSpan.textContent = "As senhas são iguais.";
+                    senhaIgualSpan.style.display = 'block';
+                    submitButton.disabled = false;
+                } else {
+                    senhaIgualSpan.textContent = "As senhas não são iguais. Por favor, verifique.";
+                    senhaIgualSpan.style.display = 'block';
+                    submitButton.disabled = true;
+                }
+            } else {
+                senhaIgualSpan.style.display = 'none';
+                submitButton.disabled = true;
+            }
+        }
+    });
+</script>
+
+</body>
+</html>

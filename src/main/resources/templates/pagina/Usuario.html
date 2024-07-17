@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #0056b3, #0bf1ac, #fff);
+            background-size: cover; /* Cobrir toda a página */
+            background-repeat: no-repeat;
+            height: 100vh;
+
+        }
+
+        /* Estilos do header */
+        header {
+            background-color: #71acec; /* Cor de fundo azul */
+            color: #fff; /* Cor do texto branco */
+            padding: 20px 20px; /* Espaçamento interno */
+            display: flex; /* Para alinhar itens horizontalmente */
+            justify-content: space-between; /* Alinha os itens às extremidades */
+            align-items: center; /* Centraliza verticalmente */
+            border-bottom: 3px solid #eccbcb;
+            margin-bottom: 20px;
+            z-index: 1000;
+
+        }
+
+        header h1 {
+            margin: 0; /* Remove margem padrão */
+        }
+
+        nav a {
+            color: white; /* Cor do texto branco */
+            /* Remove sublinhado */
+            margin-left: 30px; /* Espaçamento entre os links */
+            font-size: 1.2rem;
+        }
+
+        nav a:hover {
+            text-decoration: underline; /* Sublinhado ao passar o mouse */
+            color: red;
+        }
+
+        .section {
+            display: flex; /* Tornar os elementos filhos flexíveis */
+            justify-content: space-between; /* Distribuir os elementos ao longo da linha */
+            align-items: center;
+            margin: 0 50px; /* Adiciona margens laterais de 50px */
+            gap: 20px;/* Centralizar verticalmente os elementos */
+        }
+
+        .perfil {
+            margin-right: 10px;
+            border: 2px solid #bce5c3;/* Margem à direita para separar dos outros elementos */
+        }
+
+        .infor {
+            text-align: center;
+            flex: 1;/* Alinhar conteúdo ao centro */
+        }
+
+        .triagem {
+            margin-left: auto;
+            border: 2px solid #bce5c3;
+        }
+
+        .perfil img {
+            margin-left: 20px;
+            border-radius: 30%;
+            width: 100px;
+            height: 100px;
+            margin-bottom: 15px;
+        }
+
+        .perfil h6{
+            margin: 0 10px;
+            font-size:1rem;
+            margin-bottom: 10px;
+
+        }
+        .perfil a{
+            margin: 0 10px;
+            color: white;
+
+        }
+        .perfil p {
+
+            margin: 0 10px;
+            margin-bottom: 10px;
+        }
+        .infor {
+            display: flex;
+            flex-direction: column;
+
+            gap: 2px;
+        }
+
+        .infor h4 {
+            display: flex;
+            justify-content: center;
+        }
+
+        .infor a {
+            display: block;
+            color:brown;
+            margin-bottom: 1px;
+        }
+        .triagem{
+            display: flex;
+            flex-direction: column;
+
+
+        }
+        .triagem h3{
+            margin-left: 40px;
+            margin-right: 20px;
+            margin-top: 92px;
+        }
+
+
+        .triagem a {
+            display: inline-block;
+            padding: 8px 60px;
+            background-color: #007bff;
+            border-radius: 6px;
+
+
+        }
+
+        .triagem a:hover {
+            background-color: #0056b3;
+        }
+
+
+    </style>
+
+
+    <title>Usuario</title>
+</head>
+<body>
+<header>
+<h1>Saúde</h1>
+<nav>
+    <a href="#">Pagina Inicial</a>
+    <a href="#">Usuario</a>
+</nav>
+</header>
+<section class="section">
+    <div class="perfil">
+        <img src="">
+        <h6>seja bem vindo</h6>
+        <a>Usuario</a>
+        <p>idade</p>
+        <p>prioridade</p>
+    </div>
+    <div class="infor">
+        <h4>informações</h4>
+        <p>cupiditate adipisci. Fuga odit architecto ut officia tenetur unde ullam, nam
+            deleniti nihil sed?<a>saiba mais</a></p>
+        <hr>
+        <p> adipisci. Fuga odit architecto ut officia tenetur unde ullam, nam
+            deleniti nihil sed?<a>saiba mais</a></p>
+        <hr>
+        <p>cupiditate adipisci. Fuga odit architecto ut officia tenetur unde ullam, nam
+        deleniti nihil sed?<a>saiba mais</a></p>
+
+
+
+
+
+    </div>
+    <div class="triagem">
+        <h3> fazer triagem </h3>
+        <a href="#">clique aqui</a>
+        <h3>Acompanhar Triagem</h3>
+        <a href="#">Acompanhar</a>
+
+    </div>
+
+</section>
+
+</body>
+</html>

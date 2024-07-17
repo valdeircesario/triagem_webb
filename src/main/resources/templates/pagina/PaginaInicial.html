@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Pagina Inicial</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #0056b3, #0bf1ac, #fff);
+            background-size: cover; /* Cobrir toda a página */
+            background-repeat: no-repeat;
+            height: 1000px;
+
+        }
+
+        /* Estilos do header */
+        header {
+            background-color: #71acec;
+            color: #fff;
+            padding: 20px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 3px solid #eccbcb;
+            margin-bottom: 20px;
+            z-index: 1000;
+
+        }
+
+        header h1 {
+            margin: 0;
+        }
+
+        nav a {
+            color: white;
+            margin-left: 30px; /
+            font-size: 1.2rem;
+        }
+
+        nav a:hover {
+            text-decoration: underline;
+            color: red;
+        }
+
+        .topo {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+
+        .info {
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+            border: 4px double #bce5c3;
+            padding: 20px;
+            width: 300px;
+            max-width: 100%;
+        }
+
+        .info a {
+            border-radius: 10px;
+            background: #535eef;
+            color: white;
+            padding: 10px 45px;
+            text-decoration: none;
+            font-size: 1.2rem;
+            text-align: center;
+        }
+
+        .info a:hover {
+            background: #71acec;
+        }
+
+        .info h3 {
+            color: #1823bb;
+            text-align: center;
+        }
+
+        .info p {
+            color: #ffffff;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+<header>
+    <h1>Saúde</h1>
+    <nav>
+        <a href="/templates/pagina/PaginaInicial.html">Página Inicial</a>
+        <a href="/templates/pagina/Login.html">login</a>
+    </nav>
+</header>
+<div class="topo">
+    <div class="info">
+        <h3>veja nossos atendimentos</h3>
+        <p> aqui voce pode acompanhar nosso atendimentos em tempo real</p>
+        <p class="tempo">tempo</p>
+        <p class="real">real</p>
+
+    </div>
+    <div class="info">
+        <h3>veja nossas especialidades</h3>
+        <p> aqui voce pode ver todas nossas especilidades</p>
+        <a href="">Especialidades</a>
+
+
+    </div>
+    <div class="info">
+        <h3>faca seu cadastro aqui</h3>
+        <p> faca seu cadastro para melhor ser atendido e voce poder acompanhar todos os seus beneficios</p>
+        <a href="/templates/pagina/Cadastrar.html">cadastrar</a>
+
+    </div>
+    <div class="info">
+        <h3>Acompanhe nos nas redes sociais</h3>
+        <a href="">Instagran</a>
+        <a href="">Facebook</a>
+        <a href="">Whatssap</a>
+        <a href="">TickTock</a>
+    </div>
+    <div></div>
+</div>
+
+</body>
+</html>
