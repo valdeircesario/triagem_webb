@@ -64,6 +64,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Função para calcular a média ponderada
     function calcularMediaPonderada(dados) {
+
         // Definir valores e pesos conforme especificações
         const valores = {
             hipertensao: {
@@ -102,7 +103,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     valores.dor[dados.dor][dados.intensidade].valor * valores.dor[dados.dor][dados.intensidade].peso :
                     valores.dor[dados.dor].valor * valores.dor[dados.dor].peso) +
                 valores.peso[dados.peso > 100 ? 'maior100' : dados.peso < 15 ? 'menor15' : 'padrao'].valor * valores.peso[dados.peso > 100 ? 'maior100' : dados.peso < 15 ? 'menor15' : 'padrao'].peso)
-            / 12; // Dividido pelo total dos pesos
+            / 2; //divide por peso dois
 
         return mediaPonderada;
     }
